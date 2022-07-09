@@ -1,0 +1,16 @@
+ejemplo 
+
+lista = [1,  2,   3]
+
+reduce: tiene un acumulador 
+interamente acumulador += elemtno
+
+cuando inicia no tiene ningún valor (no es 0 porque tabien se puede multiplicar)
+
+(a, b)
+a = acumulador 
+b = elemento
+
+
+
+reduce()

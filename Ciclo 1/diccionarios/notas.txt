@@ -1,0 +1,5 @@
+los diccionarios tienen llaves y estas a la vez tienen un valor 'llave': valor (puede ser int, str, bool)
+
+
+
+sintaxis -> diccionario = {}                ! {LLAVES}

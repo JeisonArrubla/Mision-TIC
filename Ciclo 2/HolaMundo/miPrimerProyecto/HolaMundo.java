@@ -124,5 +124,6 @@ public class HolaMundo {
         String mensaje = mensaje1 +" "+ mensaje2;
         System.out.println(mensaje);
         mensaje = mensaje1 + n1 + n2; // En Java, a diferencia de Python, podemos concatenar un String con otro tipo de dato
+        System.out.println(mensaje);
     }
 }

@@ -1,0 +1,3 @@
+Las litas pueden contener enteros, cadenas de caracteres, booleanos
+
+sintaxis -> lista = []              ! [CORCHETES]
