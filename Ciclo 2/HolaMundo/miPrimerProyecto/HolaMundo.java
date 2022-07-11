@@ -123,7 +123,19 @@ public class HolaMundo {
 
         String mensaje = mensaje1 +" "+ mensaje2;
         System.out.println(mensaje);
-        mensaje = mensaje1 + n1 + n2; // En Java, a diferencia de Python, podemos concatenar un String con otro tipo de dato
+
+        mensaje = mensaje1 +" "+ n1; // En Java, a diferencia de Python, podemos concatenar un String con otro tipo de dato
+        System.out.println(mensaje);
+
+        mensaje = mensaje2 +" "+ n2; // En Java, a diferencia de Python, podemos concatenar un String con otro tipo de dato
+        System.out.println(mensaje);
+
+        // -----------------
+        // Convertir cadena/String a mayúscula
+        mensaje = mensaje1.toUpperCase();
+        System.out.println(mensaje);
+        // Convertir a minúscula
+        mensaje = mensaje.toLowerCase();
         System.out.println(mensaje);
     }
 }
