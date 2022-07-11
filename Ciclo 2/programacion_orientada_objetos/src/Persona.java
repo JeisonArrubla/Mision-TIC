@@ -1,5 +1,14 @@
 public class Persona {
 
+    /*
+    Las clases tienen 5 secciones:
+    -Atributos
+    -Métodos constructores
+    -Métodos consultores
+    -Métodos modificadores
+    -Acciones
+    */
+
     // ATRIBUTOS
     private String nombre;
     private String apellido;
@@ -15,6 +24,7 @@ public class Persona {
     }
 
     // MÉTODOS CONSULTORES
+    // Nombrar con get por estandar
     public String getNombre(){
         return nombre;
     }
@@ -22,4 +32,16 @@ public class Persona {
     public String getApellido(){
         return apellido;
     }
+
+    // MÉTODOS MODIFICADORES
+    // Nombrar con set por estandar
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido){
+        this.apellido = apellido;
+    }
+
+    // ACCIONES
 }
