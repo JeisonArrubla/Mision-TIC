@@ -59,6 +59,7 @@ public class HolaMundo {
         decremental();
         operadores_logicos();
         cadenas();
+        libreria_math();
     }
 
     public static void incremental() {
@@ -115,7 +116,7 @@ public class HolaMundo {
     }
 
     public static void cadenas(){
-        System.out.println("-----CONCATENANDO CADENAS------");
+        System.out.println("------------------------------CADENAS------------------------------");
         String mensaje1 = "Hola mundo";
         String mensaje2 = "UTP Misión TIC 2022";
         int n1 = 10;
@@ -158,5 +159,15 @@ public class HolaMundo {
         System.out.println("Igual -> "+igual);
         igual = mensaje1.equalsIgnoreCase(mensaje2);
         System.out.println("Igual -> "+igual);
+    }
+
+    public static void libreria_math(){
+        System.out.println("-----------------------------LIBRERÍA MATH-----------------------------");
+        // Elevar a la potencia un número
+        double resultado = Math.pow(5, 2); // 5 elevado al cuadrado
+        System.out.println("5^2 -> "+resultado);
+        // Raíz cuadrada
+        resultado = Math.sqrt(5);
+        System.out.println("Raíz cuadra de 5 -> "+resultado);
     }
 }
