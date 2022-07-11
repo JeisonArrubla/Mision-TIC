@@ -137,5 +137,26 @@ public class HolaMundo {
         // Convertir a minúscula
         mensaje = mensaje.toLowerCase();
         System.out.println(mensaje);
+
+        // -----------------
+        // Obtener tamaño del String
+        int tamanio = mensaje1.length();
+        System.out.println(tamanio);
+
+        // Obtener caracter a partir de su posición
+        char caracter = mensaje1.charAt(5);
+        System.out.println("Caracter -> "+caracter);
+
+        // Obtener posición de un caracter (primera aparición)
+        int index = mensaje1.indexOf('o'); // Retorna -1 si no lo encuentra
+        System.out.println(index);
+
+        // Igualar cadena de caracteres (String)
+        mensaje1 = "HOLA";
+        mensaje2 = "hola";
+        boolean igual = mensaje1.equals(mensaje2); // case sensitive
+        System.out.println("Igual -> "+igual);
+        igual = mensaje1.equalsIgnoreCase(mensaje2);
+        System.out.println("Igual -> "+igual);
     }
 }
