@@ -53,15 +53,15 @@ public class Persona {
         return cedula;
     }
 
-    public String getTelefono(){
+    public String getTelefono() {
         return telefono;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
-    public char getGenero(){
+    public char getGenero() {
         return genero;
     }
 
@@ -75,29 +75,43 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public void setEdad(int edad){
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public void setCedula(String cedula){
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
-    public void setTelefono(String telefono){
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setGenero(char genero){
+    public void setGenero(char genero) {
         this.genero = genero;
     }
 
     // ACCIONES
-    public double calcular_nomina(double valor_hora) {
-        int cant_horas = 10;
-        return (cant_horas * valor_hora);
+    public double calcular_nomina(double cant_hora) {
+        int valor_hora = 0;
+        double nomina = 0;
+        // && -> and
+        if (edad >= 18 && edad < 20) {
+            valor_hora = 10;
+        } else if(edad >= 20 && edad < 30){
+            valor_hora = 15;
+        }else if(edad >= 30 && edad < 50){
+            valor_hora = 20;
+        }else if(edad >= 50){
+            valor_hora = 25;
+        }
+
+        nomina = valor_hora * cant_hora;
+
+        return nomina;
     }
 }
