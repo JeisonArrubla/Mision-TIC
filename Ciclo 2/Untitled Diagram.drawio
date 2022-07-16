@@ -1,1 +1,43 @@
-<mxfile host="app.diagrams.net" modified="2022-07-16T22:20:29.863Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.49" version="20.1.1" etag="XaJ8ucMMu1BDgwc491xU" type="github"><diagram id="E597sxiPu6TXNNgw2shg">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-07-16T23:15:51.310Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.49" etag="NV-P5osOBHjaY5XNMZLg" version="20.1.1" type="github">
+  <diagram id="E597sxiPu6TXNNgw2shg" name="Page-1">
+    <mxGraphModel dx="723" dy="368" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f0CHvtcK751_LuhTRboP-1" value="Persona" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="70" width="310" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-2" value="- nombre: String&#xa;- apellido: String&#xa;- edad: int&#xa;- cedula: String&#xa;- telefono: String&#xa;- email: String&#xa;- genero: char" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="f0CHvtcK751_LuhTRboP-1">
+          <mxGeometry y="26" width="310" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="f0CHvtcK751_LuhTRboP-1">
+          <mxGeometry y="130" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-4" value="+ calcular_nomina(cant_horas: double): double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="f0CHvtcK751_LuhTRboP-1">
+          <mxGeometry y="138" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-6" value="Carro" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="70" width="160" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-7" value="- color: String&#xa;- matricula: String&#xa;- modelo: String&#xa;- cap_personas: int&#xa;- tipo_carro: String&#xa;- ver_maxima: double&#xa;- gasolina: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="f0CHvtcK751_LuhTRboP-6">
+          <mxGeometry y="26" width="160" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="f0CHvtcK751_LuhTRboP-6">
+          <mxGeometry y="140" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-9" value="+ acelerar()&#xa;+ frenar()&#xa;+ girar_dere()&#xa;+ girar_izq()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="f0CHvtcK751_LuhTRboP-6">
+          <mxGeometry y="148" width="160" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-13" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="f0CHvtcK751_LuhTRboP-7">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="400" y="151.57999999999998" as="sourcePoint" />
+            <mxPoint x="500" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f0CHvtcK751_LuhTRboP-14" value="+ public&lt;br&gt;- private" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="160" y="10" width="70" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
