@@ -121,24 +121,24 @@ public class Persona {
         Scanner leer = new Scanner(System.in);
         // Solicitar datos para crear un carro
         System.out.print("Qué color desea para su vehículo: ");
-        String color = leer.nextLine();
+        String color = leer.next();
 
         System.out.print("Matrícula del vehículo: ");
-        String matricula = leer.nextLine();
+        String matricula = leer.next();
 
         System.out.print("Modelo del vehículo: ");
-        String modelo = leer.nextLine();
+        String modelo = leer.next();
 
         System.out.print("Qué capacidad de personas desea que tenga el vehículo: ");
         int cap_personas = leer.nextInt();
 
         System.out.print("Tipo de vehículo: ");
-        String tipo_carro = leer.nextLine();
+        String tipo_carro = leer.next();
 
         System.out.print("Velocidad máxima del vehículo (Ej: 200): ");
         double vel_maxima = leer.nextDouble();
 
-        System.out.print("Desea que el vehículo sea a gasolina (1 -> Sí / 0 -> No): ");
+        System.out.print("Desea que el vehículo sea a gasolina (S -> Sí / N -> No): ");
         String str_gasolina = leer.next();
         boolean gasolina = str_gasolina.equalsIgnoreCase("s");
 
