@@ -81,7 +81,7 @@ public class Carro {
     // ACCIONES
 
     public void acelerar(){
-        System.out.println("Acelerando... "🚗);
+        System.out.println("Acelerando... 🚗");
     }
 
     public void frenar(){

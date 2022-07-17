@@ -51,5 +51,7 @@ public class App {
         apellido = objPersona5.getApellido();
         nomina = objPersona5.calcular_nomina(10);
         System.out.println(apellido+" - Nómina: "+nomina);
+
+        objPersona1.crear_carro();
     }
 }
