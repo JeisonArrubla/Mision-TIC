@@ -57,4 +57,13 @@ public class Empleado {
         this.sueldoBruto = sueldoBruto;
     }
 
+    // ACCIONES
+    public void mostrar(){
+
+    }
+
+    public void calcularSalarioNeto(){
+        
+    }
+
 }
