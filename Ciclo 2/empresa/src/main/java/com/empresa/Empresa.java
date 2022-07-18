@@ -48,7 +48,7 @@ public class Empresa {
             System.out.print("Por favor ingrese el nombre del empleado: ");
             String nombre = leer.next();
 
-            System.out.print("Por favor ingrese la edad del emplead0: ");
+            System.out.print("Por favor ingrese la edad del empleado: ");
             int edad = leer.nextInt();
 
             empleado = new Empleado(nombre, edad);
