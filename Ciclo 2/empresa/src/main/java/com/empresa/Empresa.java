@@ -10,16 +10,11 @@ public class Empresa {
     // CONSTRUCTOR
     // SOBRECARGA DE MÉTODOS
     public Empresa(String nombre) {
-        this.nombre = nombre;
-
-        crearEmpleado();
-        // Al momento de crear una empresa vamos a crear un empleado, por eso el método se llama desde el constructor 
+        this.nombre = nombre; 
     }
 
     public Empresa() {
         this.nombre = "";
-
-        crearEmpleado();
     }
 
     // CONSULTORES - GETTERS
@@ -43,14 +38,14 @@ public class Empresa {
     }
 
     // ACCIONES
-    public void crearEmpleado() {
-        try (Scanner leer = new Scanner(System.in)) {
+    public void crearEmpleado(Scanner leer) {
+        try{
             System.out.print("Por favor ingrese el nombre del empleado: ");
             String nombre = leer.next();
 
             System.out.print("Por favor ingrese la edad del empleado: ");
             int edad = leer.nextInt();
-            leer.nextLine(); // Para evitar errores después del nextInt por salto de línea
+            leer.nextLine(); // Para capturar el salto de línea y no genere error en la próxima solicitud de datos
 
             empleado = new Empleado(nombre, edad);
 
@@ -59,10 +54,10 @@ public class Empresa {
         }
     }
 
-    public Cliente registrarCliente() {
+    public Cliente registrarCliente(Scanner leer) {
         Cliente cliente = new Cliente();
 
-        try(Scanner leer = new Scanner(System.in)){
+        try{
 
             System.out.print("Ingrese el nombre del cliente: ");
             String nombre = leer.next();
