@@ -11,6 +11,7 @@ public class App
         objEmpresa.crearEmpleado(leer);
         System.out.println(objEmpresa.getEmpleado());
         Cliente objCliente = objEmpresa.registrarCliente(leer);
+        System.out.println(objCliente);
 
         // Empleado emp = new Empleado("Jeison", 20);
         // System.out.println(emp);

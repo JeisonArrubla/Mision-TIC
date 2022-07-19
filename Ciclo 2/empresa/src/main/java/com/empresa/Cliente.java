@@ -26,6 +26,16 @@ public class Cliente {
         this.telefono = "";
     }
 
+    @Override
+    public String toString() {
+        String info = " ------------------------------ CLIENTE -------------------------------";
+        info += "\nNombre: "+nombre;
+        info += "\nApellido: "+apellido;
+        info += "\nTeléfono: "+telefono;
+        info += "\n-----------------------------------------------------------------------";
+        return info;
+    }
+
     // CONSULTORES
 
     public String getNombre() {

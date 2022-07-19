@@ -32,10 +32,11 @@ public class Empleado {
     // Esta es la información que se va a mostrar
     @Override // @Override indica que vamos a sobreescribir un método
     public String toString() {
-        String info = " -------------------- Empleado --------------------";
+        String info = " ------------------------------ EMPLEADO ------------------------------";
         info += "\nNombre: "+nombre;
         info += "\nEdad: "+edad;
-        info += "\nSueldo: "+sueldoBruto+"\n";
+        info += "\nSueldo: "+sueldoBruto;
+        info += "\n-----------------------------------------------------------------------";
         return info;
     }
 
