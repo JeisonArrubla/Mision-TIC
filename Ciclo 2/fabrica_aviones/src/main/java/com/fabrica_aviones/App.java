@@ -13,6 +13,18 @@ public class App {
         avionCarga.aterrizar();
         avionCarga.frenar();
         avionCarga.descargar();
+
+        AvionPasajeros avionPasajeros = new AvionPasajeros("Amarillo", 80.7, 200);
+        System.out.println("---------------------ATRIBUTOS---------------------");
+        color = avionPasajeros.getColor();
+        tamanio = avionPasajeros.getTamanio();
+        int pasajeros = avionPasajeros.getPasajeros();
+        System.out.println("Color: " + color + "\nTamaño: " + tamanio + "\nPasajeros: " + pasajeros);
+        System.out.println("---------------------ACCIONES---------------------");
+        avionPasajeros.despegar();
+        avionPasajeros.aterrizar();
+        avionPasajeros.frenar();
+        avionPasajeros.servir();
     }
 
 }
