@@ -50,6 +50,7 @@ public class Empresa {
 
             System.out.print("Por favor ingrese la edad del empleado: ");
             int edad = leer.nextInt();
+            leer.nextLine(); // Para evitar errores después del nextInt por salto de línea
 
             empleado = new Empleado(nombre, edad);
 

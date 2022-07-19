@@ -29,6 +29,16 @@ public class Empleado {
         this.sueldoBruto = 0.0;
     }
 
+    // Esta es la información que se va a mostrar
+    @Override // @Override indica que vamos a sobreescribir un método
+    public String toString() {
+        String info = " -------------------- Empleado --------------------";
+        info += "\nNombre: "+nombre;
+        info += "\nEdad: "+edad;
+        info += "\nSueldo: "+sueldoBruto+"\n";
+        return info;
+    }
+
     // CONSULTORES - GETTERS
 
     public String getNombre() {

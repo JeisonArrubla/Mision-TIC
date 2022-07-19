@@ -1,14 +1,13 @@
 package com.empresa;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-        Empresa objEmpresa = new Empresa("Tesla");
-        Cliente objCliente = objEmpresa.registrarCliente();
+        // Empresa objEmpresa = new Empresa("Tesla");
+        // Cliente objCliente = objEmpresa.registrarCliente();
+
+        Empleado emp = new Empleado("Jeison", 20);
+        System.out.println(emp);
     }
 }
