@@ -1,12 +1,22 @@
 package com.fabrica_aviones;
 
-public class AvionMilitar extends Avion{
-    
+public class AvionMilitar extends Avion {
+
     private int misiles;
 
-    public AvionMilitar(String color, double tamanio, int misiles){
+    public AvionMilitar(String color, double tamanio, int misiles) {
         super(color, tamanio);
         this.misiles = misiles;
+    }
+
+    @Override
+    public String toString() {
+        String info = "----------- AVION MILITAR -----------";
+        info += "\nColor: " + this.getColor();
+        info += "\nTamaño: " + this.getTamanio();
+        info += "\nMisiles: " + this.misiles;
+        info += "\n";
+        return info;
     }
 
     public int getMisiles() {
@@ -17,7 +27,7 @@ public class AvionMilitar extends Avion{
         this.misiles = misiles;
     }
 
-    private void disparar(){
+    private void disparar() {
         System.out.println("Disparando... 🔫");
     }
 }

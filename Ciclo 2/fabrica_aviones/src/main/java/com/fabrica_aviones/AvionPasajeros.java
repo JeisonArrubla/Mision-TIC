@@ -9,6 +9,16 @@ public class AvionPasajeros extends Avion {
         this.pasajeros = pasajeros;
     }
 
+    @Override
+    public String toString() {
+        String info = "----------- AVION COMERCIAL -----------";
+        info += "\nColor: " + this.getColor();
+        info += "\nTamaño: " + this.getTamanio();
+        info += "\nPasajeros: " + pasajeros;
+        info += "\n";
+        return info;
+    }
+
     public int getPasajeros() {
         return pasajeros;
     }
