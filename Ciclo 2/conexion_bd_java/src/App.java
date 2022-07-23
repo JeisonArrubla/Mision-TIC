@@ -13,17 +13,20 @@ public class App {
         mostrarEmpleados(conn);
 
         // crearPuestoTrabajo(conn, "Marketing", 2000, 8000);
-        // Reutilizamos código
-        // Ya no tenemos que poner INSERT INTO... VALUES, solo pasamos los valores por
-        // parámetro
-
-        System.out.println("\n-------------JOBS-----------\n");
-        mostrarPuestosTrabajo(conn);
+        /*
+        * Reutilizamos código
+        * Ya no tenemos que poner INSERT INTO... VALUES
+        * Solo pasamos los valores por parámetro
+        */
 
         // eliminarPuestoTrabajoXId(conn, 18);
 
+        // actualizarPuestoTrabajoXId(conn, 17, "Encargado de Envíos", 5000, 12000);
+
         System.out.println("\n-------------JOBS-----------\n");
         mostrarPuestosTrabajo(conn);
+
+        
 
     }
 
@@ -110,6 +113,21 @@ public class App {
         try {
             PreparedStatement ps = conn.prepareStatement("DELETE FROM jobs WHERE job_id=?");
             ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException error) {
+            System.out.println(error.getMessage());
+        }
+    }
+
+    // Desarrollar método para actualizar por id los valores de la tabla jobs
+    public static void actualizarPuestoTrabajoXId(Connection conn, int id, String titulo, int salario_minimo, int salario_maximo) {
+        
+        try {
+            PreparedStatement ps = conn.prepareStatement("UPDATE jobs SET job_title=?, min_salary=?, max_salary=? WHERE job_id=?");
+            ps.setString(1, titulo);
+            ps.setInt(2, salario_minimo);
+            ps.setInt(3, salario_maximo);
+            ps.setInt(4, id);
             ps.executeUpdate();
         } catch (SQLException error) {
             System.out.println(error.getMessage());
