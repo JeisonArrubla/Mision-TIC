@@ -107,3 +107,91 @@ INNER JOIN departments d
 ON e.department_id = d.department_id  
 WHERE (e.salary >= 4000 AND salary <= 8000)
 ORDER BY e.salary DESC;
+
+
+
+
+--
+/*
+ * Obtener la información de todos los empleados con las siguientes columnas:
+ * *Nombre
+ * *Apellido
+ * *Nombre del cargo (job_title)
+ * *Nombre del departamento al que pertenece
+ * *Ciudad en la que se encuentra el departamento
+ * *Estado o provincia de la ciudad 
+ * *País
+ * *Región
+ * */
+
+SELECT e.first_name NOMBRE, e.last_name APELLIDO, j.job_title CARGO, d.department_name DEPARTAMENTO, l.city CIUDAD, l.state_province ESTADO, c.country_name PAÍS, r.region_name REGIÓN
+FROM employees e
+INNER JOIN jobs j ON e.job_id = j.job_id 
+INNER JOIN departments d ON e.department_id = d.department_id 
+INNER JOIN locations l ON d.location_id = l.location_id 
+INNER JOIN countries c ON l.country_id = c.country_id 
+INNER JOIN regions r ON c.region_id = r.region_id 
+
+
+
+--Ordenar consulta
+
+--Orda datos de mayor a menor
+SELECT employee_id, last_name, salary  
+FROM employees 
+ORDER BY salary DESC;
+
+--Ordena datos de menor a mayor
+SELECT employee_id AS id, last_name apellido, salary salario  
+FROM employees 
+ORDER BY salary ASC;
+
+SELECT COUNT(*) cant_empleado FROM employees;
+
+
+--Traer datos en común (usando like)
+
+--Obtener todos los empleados que su nombre empiecen por D
+SELECT first_name FROM employees
+WHERE first_name LIKE 'D%';
+
+--Obtener todos los empleados que su nombre termine en D
+SELECT first_name FROM employees
+WHERE first_name LIKE '%D';
+
+
+----Obtener todos los empleados que su nombre tenga la letra D
+SELECT first_name FROM employees
+WHERE first_name LIKE '%D%';
+
+--Comparar con valores nulos
+
+--Obtener todos los registros que no tengan NULL en el campo 'telefono'
+SELECT last_name, phone_number FROM employees 
+WHERE phone_number IS NOT NULL;
+
+--Obtener todos los registros que tengan NULL en el campo 'telefono'
+SELECT last_name, phone_number FROM employees 
+WHERE phone_number IS NULL;
+
+select * from jobs;
+
+SELECT * FROM locations;
+
+SELECT * FROM countries;
+
+SELECT l.city, l.state_province, c.country_name 
+FROM locations l 
+LEFT JOIN countries c ON l.country_id = c.country_id 
+WHERE l.country_id = 'US';
+
+--OBTENER TODOS LOS REGISTROS DE LAS DOS TABLAS
+--FULL JOIN
+--FULL JOIN AND RIGHT JOIN no son compatibles, debemos usar LEFT JOIN e intercambiar las tablas, para FULL JOIN solo debemos usar la palabra UNION
+SELECT l.city, l.state_province, c.country_name 
+FROM locations l 
+LEFT JOIN countries c ON l.country_id = c.country_id
+UNION 
+SELECT l.city, l.state_province, c.country_name 
+FROM countries c
+LEFT JOIN locations l ON l.country_id = c.country_id;
