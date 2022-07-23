@@ -7,6 +7,10 @@ import java.sql.Statement;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        Connection conn = conectar_bd();
+        mostrarEmpleados(conn);
+        System.out.println("\n-------------JOBS-----------\n");
+        mostrarPuestosTrabajo(conn);
 
     }
 
@@ -40,8 +44,9 @@ public class App {
             // Ejecutar consulta sql
             ResultSet result = statement.executeQuery("SELECT * FROM employees");
             // Iterar mientras tenga registros
-            while (result.next()) {
-                // Obtener los datos del ResultSet
+            while (result.next()) { 
+                // result.next() -> Mientras existan resultados hacer...
+                // Obtener los datos del objeto tipo ResultSet (result)
                 int id = result.getInt("employee_id");
                 String nombre = result.getString("first_name");
                 String apellido = result.getString("last_name");
@@ -81,7 +86,7 @@ public class App {
         try {
             Statement st = conn.createStatement();
             ResultSet result = st.executeQuery("SELECT * FROM jobs");
-            while (result.next()) {
+            while (result.next()) { // Mientras existan resultados hacer...
                 System.out.println("Job title: " + result.getString("job_title"));
             }
         } catch (SQLException e) {
