@@ -1,0 +1,7 @@
+para conectarnos a una bd necesitamos un controlador (jdbc)
+este dependerá del motor de bd al que nos conectemos,
+en este caso el jdbc para conectarnos a SQLite (sqlite-jdbc-3.8.11.2.jar)
+lo debemos ubicar en la carpeta lib
+en nuestro caso lo encontramos en la plataforma de imaster
+
+
