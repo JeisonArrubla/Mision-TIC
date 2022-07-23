@@ -7,8 +7,15 @@ import java.sql.Statement;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        
         Connection conn = conectar_bd();
+        
         mostrarEmpleados(conn);
+
+        crearPuestoTrabajo(conn, "Marketing", 2000, 8000);
+        // Reutilizamos código
+        // Ya no tenemos que poner INSERT INTO... VALUES, solo pasamos los valores por parámetro
+
         System.out.println("\n-------------JOBS-----------\n");
         mostrarPuestosTrabajo(conn);
 
@@ -43,6 +50,7 @@ public class App {
 
             // Ejecutar consulta sql
             ResultSet result = statement.executeQuery("SELECT * FROM employees");
+            System.out.println("\n-------------EMPLEADOS-----------\n");
             // Iterar mientras tenga registros
             while (result.next()) { 
                 // result.next() -> Mientras existan resultados hacer...
@@ -62,12 +70,8 @@ public class App {
         }
     }
 
-    public static void crearPuestoTrabajo(Connection conn) {
+    public static void crearPuestoTrabajo(Connection conn, String job_title, int min_salary, int max_salary) {
         try {
-            // Inicializar variables para el QUERY
-            String job_title = "Developer";
-            int min_salary = 5000;
-            int max_salary = 10000;
             // Estructura del QUERY
             String query = "INSERT INTO jobs(job_title, min_salary, max_salary) VALUES(?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(query);
