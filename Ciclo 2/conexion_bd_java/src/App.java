@@ -7,14 +7,20 @@ import java.sql.Statement;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
+
         Connection conn = conectar_bd();
-        
+
         mostrarEmpleados(conn);
 
-        crearPuestoTrabajo(conn, "Marketing", 2000, 8000);
+        // crearPuestoTrabajo(conn, "Marketing", 2000, 8000);
         // Reutilizamos código
-        // Ya no tenemos que poner INSERT INTO... VALUES, solo pasamos los valores por parámetro
+        // Ya no tenemos que poner INSERT INTO... VALUES, solo pasamos los valores por
+        // parámetro
+
+        System.out.println("\n-------------JOBS-----------\n");
+        mostrarPuestosTrabajo(conn);
+
+        // eliminarPuestoTrabajoXId(conn, 18);
 
         System.out.println("\n-------------JOBS-----------\n");
         mostrarPuestosTrabajo(conn);
@@ -52,7 +58,7 @@ public class App {
             ResultSet result = statement.executeQuery("SELECT * FROM employees");
             System.out.println("\n-------------EMPLEADOS-----------\n");
             // Iterar mientras tenga registros
-            while (result.next()) { 
+            while (result.next()) {
                 // result.next() -> Mientras existan resultados hacer...
                 // Obtener los datos del objeto tipo ResultSet (result)
                 int id = result.getInt("employee_id");
@@ -95,6 +101,18 @@ public class App {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    // Método para eliminar un puesto de trabajo por id
+    public static void eliminarPuestoTrabajoXId(Connection conn, int id) {
+        // Desarrollar este método, desde sus parámetros hasta su lógica
+        try {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM jobs WHERE job_id=?");
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException error) {
+            System.out.println(error.getMessage());
         }
     }
 }
