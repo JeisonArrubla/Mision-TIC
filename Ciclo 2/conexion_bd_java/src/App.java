@@ -22,6 +22,7 @@ public class App {
         // eliminarPuestoTrabajoXId(conn, 18);
 
         // actualizarPuestoTrabajoXId(conn, 17, "Encargado de Envíos", 5000, 12000);
+        // actualizarPuestoTrabajoXId(conn, 19, "Administrador de inventarios", 5000, 12000);
 
         System.out.println("\n-------------JOBS-----------\n");
         mostrarPuestosTrabajo(conn);
@@ -50,6 +51,7 @@ public class App {
     public static void mostrarEmpleados(Connection conn) {
         try {
             System.out.println("Conexión exitosa a la base de datos");
+
             // Crear objeto Statement
             Statement statement = conn.createStatement();
             // Solo se usa para consultas fijas, si la consulta lleva WHERE no se utiliza
@@ -59,6 +61,7 @@ public class App {
 
             // Ejecutar consulta sql
             ResultSet result = statement.executeQuery("SELECT * FROM employees");
+
             System.out.println("\n-------------EMPLEADOS-----------\n");
             // Iterar mientras tenga registros
             while (result.next()) {
@@ -99,8 +102,14 @@ public class App {
         try {
             Statement st = conn.createStatement();
             ResultSet result = st.executeQuery("SELECT * FROM jobs");
+
             while (result.next()) { // Mientras existan resultados hacer...
-                System.out.println("Job title: " + result.getString("job_title"));
+                int id = result.getInt("job_id");
+                String titulo = result.getString("job_title");
+                int salario_minimo = result.getInt("min_salary");
+                int salario_maximo = result.getInt("max_salary");
+
+                System.out.println("ID: "+id+"\tTÍTULO: " + titulo+"\tSALARIO MÍNIMO: "+salario_minimo+"\tSALARIO MÁXIMO: "+salario_maximo);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -128,6 +137,7 @@ public class App {
             ps.setInt(2, salario_minimo);
             ps.setInt(3, salario_maximo);
             ps.setInt(4, id);
+            // Ejecutar
             ps.executeUpdate();
         } catch (SQLException error) {
             System.out.println(error.getMessage());
